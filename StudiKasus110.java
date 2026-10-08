@@ -19,3 +19,33 @@ public class StudiKasus110 {
         jumlahCup = sc.nextInt();
         System.out.print("Masukkan uang bayar             : Rp.");
         uangBayar = sc.nextInt();
+
+        totalHarga = hargaPerCup * jumlahCup;
+        diskon = 0;
+        
+        if (totalHarga >= 100000) {
+            diskon = totalHarga * 10/100  ;
+            totalBayar = totalHarga - diskon;
+
+        } else {
+            diskon = totalHarga * 0 ;
+            totalBayar = totalHarga - diskon;
+        }
+
+        if (uangBayar >= totalBayar) {
+            kembalian = uangBayar - totalBayar;
+            kurang = 0;
+        } else {
+            kembalian = 0;
+            kurang = totalBayar - uangBayar;
+        }
+        
+        System.out.println("total harga                     : Rp." + totalHarga);
+        System.out.println("diskon                          : Rp." + diskon);
+        System.out.println("total bayar                     : Rp." + totalBayar);
+        System.out.println("kembalian                       : Rp." + kembalian);
+        System.out.println("Uang tidak cukup                : Rp." + kurang);
+        System.out.println("                                                                    ");
+        System.out.println("======= TERIMA KASIH TELAH BERBELANJA DI KEDAI KOPI MAS FARUQ =======");
+   }
+}
